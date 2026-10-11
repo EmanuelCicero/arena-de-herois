@@ -13,4 +13,22 @@ public class Arqueiro extends Personagem {
     public int getFlechas(){
         return flechas;
     }
+
+    @Override 
+    public void atacar(Personagem alvo){
+        if(estaVivo()){
+            if(alvo.estaVivo()){
+                if(flechas > 0){
+                    flechas--;
+                    System.out.println( getNome() + " lança uma flecha em " + alvo.getNome() + " e causa " + alvo.receberDano(getAtaque()+5) + " de dano. " + "( flechas: " + flechas + " )");
+                }else{
+                    System.out.println( getNome() + " esta sem flechas e dá um soco em " + alvo.getNome() + ": " + alvo.receberDano(getAtaque()/2) + " de dano. ");
+                }
+            }else{
+                System.out.println(alvo.getNome() + " já está morto! ");
+            }
+        }else{
+            System.out.println(getNome() + " está morto! ");
+        }
+    }
 }

@@ -3,11 +3,11 @@
 package arena;
 
 public class Personagem {
-    private String nome;
+    private  String nome;
     private  int vidaMaxima;
     private int vida;
-    private int ataque;
-    private int defesa;
+    private  int ataque;
+    private  int defesa;
 
     public Personagem(String nome, int vidaMaxima, int ataque, int defesa){
         this.nome =  nome;
@@ -75,16 +75,16 @@ public class Personagem {
     public void atacar(Personagem alvo){
         if(estaVivo()){
             if(alvo.estaVivo()){
-                System.out.println( nome + "ataca " + alvo.nome + "e causa " + alvo.receberDano(ataque) + " de dano.");
+                System.out.println( nome + " ataca " + alvo.nome + " e causa " + alvo.receberDano(ataque) + " de dano.");
             }else{
-                System.out.println(alvo.nome + "já está morto!");
+                System.out.println(alvo.nome + " já está morto!");
             }
         }else{
-            System.out.println(nome + "está morto!");
+            System.out.println(nome + " está morto!");
         }
     }
 
     public String status(){
-        return nome + "[HP " + vida + "/" + vidaMaxima + "]";
+        return nome + " [HP " + vida + "/" + vidaMaxima + "]";
     }
 }

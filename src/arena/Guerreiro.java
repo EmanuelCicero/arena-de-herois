@@ -13,4 +13,9 @@ public class Guerreiro extends Personagem{
     public int getArmadura(){
         return armadura;
     }
+
+    @Override 
+    public int receberDano(int dano){
+        return super.receberDano(dano - armadura);
+    }
 }
