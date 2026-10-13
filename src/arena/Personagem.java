@@ -5,8 +5,8 @@ package arena;
 public class Personagem {
     private  String nome;
     private  int vidaMaxima;
-    private int vida;
-    private  int ataque;
+    protected int vida;
+    protected   int ataque;
     private  int defesa;
 
     public Personagem(String nome, int vidaMaxima, int ataque, int defesa){

@@ -4,6 +4,7 @@ package arena;
 
 public class Mago extends Personagem {
     private int mana;
+    private int pontoDeCura = 25;
 
     public Mago(String nome, int vidaMaxima, int ataque, int defesa, int mana){
         super(nome, vidaMaxima, ataque, defesa);
@@ -12,6 +13,21 @@ public class Mago extends Personagem {
 
     public int getMana(){
         return mana;
+    }
+
+    void curarAliado(Personagem alido){
+        if(mana >= 15){
+            mana -= 15;
+            if (alido.estaVivo()) {
+                alido.vida += pontoDeCura;
+                if(alido.vida > alido.getVidaMaxima()){
+                    alido.vida = alido.getVidaMaxima();
+                }
+                System.out.println(getNome() + " cura o " + alido.getNome()+ ". " + alido.status() + " (mana: " + mana + ")");
+            }else{
+                System.out.println("Alido não está vivo");
+            }
+        }
     }
 
     @Override 

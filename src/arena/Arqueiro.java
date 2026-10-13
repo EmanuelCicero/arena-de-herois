@@ -4,6 +4,7 @@ package arena;
 
 public class Arqueiro extends Personagem {
      private int flechas;
+     private int recarregarFlechas = 3;
 
     public Arqueiro(String nome, int vidaMaxima, int ataque, int defesa, int flechas){
         super(nome, vidaMaxima, ataque, defesa);
@@ -12,6 +13,11 @@ public class Arqueiro extends Personagem {
 
     public int getFlechas(){
         return flechas;
+    }
+
+    void recarregar(){
+        flechas =+ recarregarFlechas;
+        System.out.println(getNome() + " recolhe flechas no chão. " + " (flechas: " + flechas + ")");
     }
 
     @Override 

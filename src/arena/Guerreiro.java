@@ -4,6 +4,7 @@ package arena;
 
 public class Guerreiro extends Personagem{
      private int armadura;
+     private int bonusDeAtaque = 5;
 
     public Guerreiro(String nome, int vidaMaxima, int ataque, int defesa, int armadura){
         super(nome, vidaMaxima, ataque, defesa);
@@ -12,6 +13,11 @@ public class Guerreiro extends Personagem{
 
     public int getArmadura(){
         return armadura;
+    }
+
+    void gritoDeGuerra(){
+        this.ataque += bonusDeAtaque;
+        System.out.println( getNome() + " solta um grito de guerra! Ataque agora: " + getAtaque());
     }
 
     @Override 
