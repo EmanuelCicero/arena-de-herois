@@ -16,7 +16,7 @@ public class Arqueiro extends Personagem {
     }
 
     void recarregar(){
-        flechas =+ recarregarFlechas;
+        flechas += recarregarFlechas;
         System.out.println(getNome() + " recolhe flechas no chão. " + " (flechas: " + flechas + ")");
     }
 
