@@ -119,7 +119,11 @@ public class Arena{
                 if(time[i].estaVivo()){
                     maisFraco = i;
                 }
-            }
+            }else if(time[i].vida == time[maisFraco].vida){
+                    if(i < maisFraco){
+                        maisFraco = i;
+                    }
+                }
         }
         return time[maisFraco];
     }
