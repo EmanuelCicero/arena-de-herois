@@ -17,15 +17,15 @@ public class Mago extends Personagem {
 
     void curarAliado(Personagem alido){
         if(mana >= 15){
-            mana -= 15;
             if (alido.estaVivo()) {
+                mana -= 15;
                 alido.vida += pontoDeCura;
                 if(alido.vida > alido.getVidaMaxima()){
                     alido.vida = alido.getVidaMaxima();
                 }
                 System.out.println(getNome() + " cura o " + alido.getNome()+ ". " + alido.status() + " (mana: " + mana + ")");
             }else{
-                System.out.println("Alido não está vivo");
+                System.out.println("Alido não está vivo!" + " (mana: " + mana + ")");
             }
         }
     }
